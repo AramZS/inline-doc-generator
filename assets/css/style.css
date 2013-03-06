@@ -14,3 +14,49 @@ body {
 	display:inline-block;
 	margin: 0 18px;
 }
+
+.help-standout {
+
+	margin: 20px auto;
+	
+
+}
+
+.row-fluid div.help-standout-block {
+	border: 1px solid #e1e1e8;
+	min-height: 130px;
+}
+
+.show-grid [class*="span"] {
+	background-color: #eee;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	min-height: 40px;
+	padding: 12px;
+	border: 1px solid #e1e1e8;
+}
+
+.show-grid [class*="span"]:hover {
+	background-color: #ddd;
+}
+
+.show-grid.row-fluid div.select-figure {
+	min-height: 240px;
+}
+
+.clear {
+	width: 100%;
+	clear: both;
+}
+
+.input-box {
+	border: 1px solid #e1e1e8;
+	display: block;
+	padding: 12px;	
+
+}
+
+.input-box textarea {
+	width: 400px;
+}
