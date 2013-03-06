@@ -1,0 +1,16 @@
+body {
+	margin:16px;
+}
+
+#type_selection {
+	
+}
+
+#constants {
+	margin: 14px auto;
+}
+
+#constants label {
+	display:inline-block;
+	margin: 0 18px;
+}
