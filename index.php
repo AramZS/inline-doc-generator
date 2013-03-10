@@ -137,7 +137,10 @@
 			</section>
 			<section class="php php-class php-function input-box">
 				<span class="help-block">What is still left to do?</span>
-				<label>To do: <input type="text" placeholder="1.8"></label>
+				<div id="todo-box">
+					<label>To do: <input type="text" placeholder="Build some stuff"></label>
+				</div>
+				<a class="add-more btn offset1" id="more-todo">Add Another To Do</a>
 			</section>					
 		</section>
 		<section id="method-arguments" class="php ruby php-function ruby-method">
@@ -280,6 +283,9 @@
 				<label class="links" source-spawn="more-links">URL: <input type="text" placeholder="http://aramzs.me"></label>
 				
 				<label class="authors" source-spawn="more-authors">Author: <input type="text" placeholder="authorname"></label>
+
+				<label class="todos" source-spawn="more-todos">To do: <input type="text" placeholder="Build some stuff"></label>
+				
 	</section>
 
 </footer>
