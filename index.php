@@ -134,6 +134,10 @@
 			<section class="php php-class php-function input-box">
 				<span class="help-block">When, if ever, was the file depreciated?</span>
 				<label>Version: <input type="text" placeholder="1.8"></label>
+			</section>
+			<section class="php php-class php-function input-box">
+				<span class="help-block">What is still left to do?</span>
+				<label>To do: <input type="text" placeholder="1.8"></label>
 			</section>					
 		</section>
 		<section id="method-arguments" class="php ruby php-function ruby-method">
