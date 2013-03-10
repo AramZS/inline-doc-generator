@@ -56,7 +56,7 @@
 			</div>
 			<div class="clear"><hr /></div>
 			<p class="help-block">To describe the status of a method, you SHOULD use one of several prefixes:</p>
-			<section class="row-fluid show-grid grid" class="php ruby php-class php-function ruby-method">
+			<section class="row-fluid show-grid grid" class="php ruby php-class php-function ruby-method input-box" id="api">
 				<div class="span4 select-figure" id="method-description-public">
 					<figure>
 						<header>
@@ -64,7 +64,8 @@
 						</header>
 						<p>Indicates that the method is part of the project's <strong>public API</strong>. This annotation is designed to let developers know which methods are considered stable. You SHOULD use this to document the public API of your project. This information can then be used along with <a target="_blank" title="Semantic Versioning Specifications" href="http://semver.org/">Semantic Versioning</a> to inform decisions on when major, minor, and patch versions should be incremented.</p>
 						<footer>
-							<div class="text-center"><a class="btn btn-success btn-small" id="method-description-public-select" href="#">Select 'Public'</a></div>
+							<div class="text-center"><a class="btn btn-success btn-small" id="method-description-public-select" title="public" href="#">Select 'Public'</a></div>
+							<input type="hidden" value="public">
 						</footer>
 					</figure>
 				</div>
@@ -75,7 +76,8 @@
 						</header>
 						<p>Indicates that the method is part of the project's internal API. These are methods that are intended to be called from other classes within the project but <strong>not intended for public consumption</strong>.</p>
 						<footer>
-							<div class="text-center"><a class="btn btn-success btn-small" id="method-description-internal-select" href="#">Select 'Internal'</a></div>
+							<div class="text-center"><a class="btn btn-success btn-small" id="method-description-internal-select" title="internal" href="#">Select 'Internal'</a></div>
+							
 						</footer>
 					</figure>
 				</div>
@@ -86,7 +88,7 @@
 						</header>
 						<p>Indicates that the method is deprecated and will be removed in a future version. You SHOULD use this to document methods that were Public but will be removed at the next major version.</p>
 						<footer>
-							<div class="text-center"><a class="btn btn-success btn-small" id="method-description-deprecated-select" href="#">Select 'Deprecated'</a></div>
+							<div class="text-center"><a class="btn btn-success btn-small" id="method-description-deprecated-select" title="deprecated" href="#">Select 'Deprecated'</a></div>
 						</footer>
 					</figure>
 				</div>
@@ -103,54 +105,54 @@
 				</label>
 			</div>
 			</section>
-			<section class="php php-class php-function input-box">
+			<section class="php php-class php-function input-box" id="authors">
 				<span class="help-block">Designate the Origonal Author of this function.</span>
 				<div id="authors-box">
 					<label class="authors">Author: <input type="text" placeholder="authorname"></label>
 				</div>
 				<a class="add-more btn offset1" id="more-authors">Add Another Authors</a>
 			</section>
-			<section class="php php-class php-function input-box">
+			<section class="php php-class php-function input-box" id="version">
 				<span class="help-block">In what version is this in now?</span>
 				<label>Version: <input type="text" placeholder="1.7"></label>
 			</section>
-			<section class="php php-class php-function input-box">
+			<section class="php php-class php-function input-box" id="link">
 				<span class="help-block">Designate a link about or as a source of this function.</span>
 				<div id="links-box">
 					<label class="links">URL: <input type="text" placeholder="http://aramzs.me"></label>
 				</div>
 				<a class="add-more btn offset1" id="more-links">Add Another Link</a>
 			</section>
-			<section class="php php-class php-function input-box">
+			<section class="php php-class php-function input-box" id="see">
 				<span class="help-block">Notify other developers of related or dependent functions. Functions should be comma seperated.</span>
 				<div id="other-functions-box">
 					<label>Functions: <input type="text" placeholder="NetOther, Net_Sample::Net_Sample()"></label>
 				</div>
 			</section>
-			<section class="php php-class php-function input-box">
+			<section class="php php-class php-function input-box" id="since">
 				<span class="help-block">Since what version has this function existed?</span>
 				<label>Version: <input type="text" placeholder="1.3"></label>
 			</section>
-			<section class="php php-class php-function input-box">
+			<section class="php php-class php-function input-box" id="deprecated">
 				<span class="help-block">When, if ever, was the file depreciated?</span>
 				<label>Version: <input type="text" placeholder="1.8"></label>
 			</section>
-			<section class="php php-class php-function input-box">
+			<section class="php php-class php-function input-box" id="todos">
 				<span class="help-block">What is still left to do?</span>
-				<div id="todo-box">
+				<div id="todos-box">
 					<label>To do: <input type="text" placeholder="Build some stuff"></label>
 				</div>
-				<a class="add-more btn offset1" id="more-todo">Add Another To Do</a>
+				<a class="add-more btn offset1" id="more-todos">Add Another To Do</a>
 			</section>					
 		</section>
 		<section id="method-arguments" class="php ruby php-function ruby-method">
 			<span class="help-block">The arguments section consists of a list of arguments. The expected type (or types) of each argument SHOULD be clearly indicated in the explanation. When you specify a type, use the proper classname of the type. If the argument has other constraints, simply state those requirements. Say object rather than mixed.</span> 
-			<section id="parameters" class="input-box">
+			<section id="parameters">
 				<section class="parameter">
-					<section class="input-box">
+					<section id="parameter-type" class="input-box">
 						<span class="help-block">Select Paramater Type.</span>
 						<div id="other-functions-box">
-							<label>Param:
+							<label>Type:
 								<select>
 									<option value="int">Integer</option>
 									<option value="string">String</option>
@@ -164,27 +166,27 @@
 							</label>
 						</div>
 					</section>
-					<section class="input-box">
+					<section id="parameter-name" class="input-box">
 						<span class="help-block">Enter paramater name as it appears in the function.</span>
 						<label>$<input type="text" placeholder="arg1"></label>
 					</section>	
-					<section class="input-box">
+					<section id="parameter-description" class="input-box">
 						<label>Describe your paramater, the name of the paramater or argument type should be included in this description: 
 							<textarea rows="7" cols="80" placeholder="Description">
 							</textarea>
 						</label>
 					</section>					
 				</section>
-				<a class="add-more btn offset1" id="more-parameters">Add Another Parameter</a>
+				<a class="add-more btn offset1" id="more-parameter">Add Another Parameter</a>
 			</section>			
 		</section>
 		<section id="method-returns" class="php ruby php-function ruby-method">
 			<section id="returns" class="php ruby">
 				<span class="help-block php">Return tags should contain the data type then a description of the data returned.  The data type should contain the type primarily returned.  For example, if a method returns an object when things work correctly but false when an error happens, say 'object' rather than 'mixed.'  Use 'void' if nothing is returned.</span>
-				<section class="input-box">
+				<section id="return-type" class="input-box">
 							<span class="help-block">Select Paramater Type.</span>
 							<div id="other-functions-box">
-								<label>Param:
+								<label>Type:
 									<select>
 										<option value="int">Integer</option>
 										<option value="string">String</option>
@@ -199,7 +201,7 @@
 								</label>
 							</div>
 				</section>
-				<section class="input-box">
+				<section id="return-description" class="input-box">
 							<label>Describe the returned paramater, the name of the paramater or argument type should be included in this description. If it returns something different on failure, include that here:<br /> 
 								<textarea rows="7" cols="80" placeholder="Description">
 								</textarea>
@@ -208,16 +210,16 @@
 			</section>
 			<section id="exceptions" class="php">
 				<span class="help-block php">The throws tag states your exception class and describes it. The @throws tag is required if the method uses exceptions.</span>
-				<section class="input-box">
+				<section id="exception" class="input-box">
 							<label>Exception class: 
 								<textarea rows="7" cols="80" placeholder="exceptionclass">
 								</textarea>
 							</label>
 				</section>
 			</section>
-			<section id="static" class="php">
+			<section id="statics" class="php">
 				<span class="help-block">Tell users if your function is static.</span>
-				<section class="input-box">
+				<section id="static" class="input-box">
 					<label>Can the function be called statically? <br />
 					<input type="checkbox" name="static" value="static">Yes
 					</label>
@@ -228,7 +230,7 @@
 </section>
 
 <section id="block-comment" style="display:none;">
-	<section class="input-box">
+	<section id="comment" class="input-box">
 		<label>Enter your plaintext comment here.<br /> 
 			<textarea rows="7" cols="80" placeholder="Long comment">
 			</textarea>
@@ -252,7 +254,7 @@
 
 	<section id="usethis" style="display:none;">
 
-				<section source-spawn="more-parameters" class="parameter input-box">
+				<section source-spawn="more-parameter" class="parameter input-box">
 					<section class="input-box">
 						<span class="help-block">Select Return Type.</span>
 						<div id="other-functions-box">
